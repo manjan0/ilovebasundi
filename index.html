@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday!</title>
+  <title>Happy Birthday Mahek!</title>
   <style>
     * {
       margin: 0;
@@ -13,8 +13,8 @@
     }
     
     body {
-      background: linear-gradient(45deg, #ff6b6b, #ffa07a, #b39ddb, #81c784, #4fc3f7);
-      background-size: 400% 400%;
+      background: linear-gradient(45deg, #ff47a3, #ff9f68, #7b4dff, #00e0ff, #5aff8f);
+      background-size: 500% 500%;
       animation: gradient 15s ease infinite;
       color: #fff;
       overflow-x: hidden;
@@ -38,27 +38,38 @@
     }
     
     .header {
-      margin-bottom: 50px;
+      margin-bottom: 40px;
       position: relative;
     }
     
     h1 {
-      font-size: 4rem;
+      font-size: 4.5rem;
       color: #fff;
       margin-bottom: 10px;
       text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
       animation: pulse 2s infinite;
+      background: linear-gradient(to right, #ff47a3, #fffd77, #5aff8f, #00e0ff, #7b4dff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 200% auto;
+      animation: rainbow 6s linear infinite;
     }
     
-    p.subtitle {
-      font-size: 1.5rem;
+    @keyframes rainbow {
+      0% {background-position: 0% center;}
+      100% {background-position: 200% center;}
+    }
+    
+    .from-text {
+      font-size: 1.8rem;
       color: #fff;
-      margin-bottom: 30px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
     
     .cake-container {
-      margin: 60px auto;
+      margin: 40px auto;
       position: relative;
       width: 200px;
       height: 200px;
@@ -67,7 +78,7 @@
     .cake {
       width: 200px;
       height: 100px;
-      background: #ff85a2;
+      background: #ff47a3;
       border-radius: 10px 10px 0 0;
       position: relative;
       margin-top: 80px;
@@ -79,7 +90,7 @@
       position: absolute;
       width: 100%;
       height: 20px;
-      background: #ffc3a0;
+      background: #fffd77;
       top: -20px;
       border-radius: 10px 10px 0 0;
     }
@@ -89,7 +100,7 @@
       position: absolute;
       width: 100%;
       height: 40px;
-      background: #ff5252;
+      background: #ff9f68;
       bottom: -40px;
       border-radius: 0 0 10px 10px;
     }
@@ -97,7 +108,7 @@
     .candle {
       width: 10px;
       height: 50px;
-      background: #a47cff;
+      background: #7b4dff;
       position: absolute;
       top: 10px;
       left: 50%;
@@ -109,34 +120,35 @@
     .flame {
       width: 20px;
       height: 40px;
-      background: #ffeb3b;
+      background: #fffd77;
       border-radius: 50% 50% 20% 20%;
       position: absolute;
       top: -35px;
       left: 50%;
       transform: translateX(-50%);
-      box-shadow: 0 0 20px #ff9800, 0 0 40px #ff9800;
+      box-shadow: 0 0 20px #ff9f68, 0 0 40px #ff9f68;
       animation: flicker 0.5s infinite alternate;
       cursor: pointer;
     }
     
     .gift-button {
-      background: linear-gradient(45deg, #5e35b1, #3949ab);
+      background: linear-gradient(45deg, #7b4dff, #ff47a3);
       color: white;
       border: none;
-      padding: 18px 36px;
+      padding: 20px 40px;
       border-radius: 50px;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: bold;
       cursor: pointer;
       margin: 40px auto;
       display: block;
       transition: all 0.3s ease;
       box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      text-transform: uppercase;
     }
     
     .gift-button:hover {
-      background: linear-gradient(45deg, #3949ab, #5e35b1);
+      background: linear-gradient(45deg, #ff47a3, #7b4dff);
       transform: scale(1.1) translateY(-5px);
       box-shadow: 0 15px 25px rgba(0,0,0,0.3);
     }
@@ -188,7 +200,7 @@
     
     .close-modal:hover {
       transform: scale(1.2);
-      color: #ff5252;
+      color: #ff47a3;
     }
     
     .gift-image {
@@ -198,6 +210,7 @@
       border-radius: 15px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
       transition: transform 0.5s ease;
+      border: 5px solid #ff47a3;
     }
     
     .gift-image:hover {
@@ -206,7 +219,7 @@
     
     h2 {
       font-size: 2.5rem;
-      color: #5e35b1;
+      color: #7b4dff;
       margin-bottom: 20px;
     }
     
@@ -215,6 +228,53 @@
       color: #333;
       margin-top: 20px;
       line-height: 1.6;
+    }
+    
+    .balloon {
+      position: absolute;
+      width: 60px;
+      height: 90px;
+      opacity: 0.8;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      animation: float 5s ease-in-out infinite;
+      z-index: 0;
+    }
+    
+    /* Hearts floating animation */
+    .heart {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: #ff47a3;
+      transform: rotate(45deg);
+      animation: float-heart 8s ease-in-out infinite;
+      opacity: 0.7;
+    }
+    
+    .heart:before,
+    .heart:after {
+      content: '';
+      width: 30px;
+      height: 30px;
+      background-color: #ff47a3;
+      border-radius: 50%;
+      position: absolute;
+    }
+    
+    .heart:before {
+      top: -15px;
+      left: 0;
+    }
+    
+    .heart:after {
+      top: 0;
+      left: -15px;
+    }
+    
+    @keyframes float-heart {
+      0% { transform: rotate(45deg) translateY(0) scale(1); }
+      50% { transform: rotate(45deg) translateY(-20px) scale(1.1); }
+      100% { transform: rotate(45deg) translateY(0) scale(1); }
     }
     
     @keyframes pulse {
@@ -238,19 +298,35 @@
       to { transform: scale(1); opacity: 1; }
     }
     
-    .balloon {
-      position: absolute;
-      width: 60px;
-      height: 90px;
-      opacity: 0.8;
-      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-      animation: float 5s ease-in-out infinite;
-    }
-    
     @keyframes float {
       0% { transform: translateY(0); }
       50% { transform: translateY(-20px); }
       100% { transform: translateY(0); }
+    }
+    
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    .star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background-color: white;
+      border-radius: 50%;
+      animation: twinkle 4s infinite;
+    }
+    
+    @keyframes twinkle {
+      0% { opacity: 0.2; transform: scale(0.5); }
+      50% { opacity: 1; transform: scale(1.2); }
+      100% { opacity: 0.2; transform: scale(0.5); }
     }
     
     @media (max-width: 600px) {
@@ -260,16 +336,40 @@
       
       .gift-button {
         padding: 15px 30px;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Create stars background -->
+  <div class="stars">
+    <div class="star" style="top: 10%; left: 5%; animation-delay: 0s;"></div>
+    <div class="star" style="top: 20%; left: 15%; animation-delay: 1s;"></div>
+    <div class="star" style="top: 15%; left: 25%; animation-delay: 2s;"></div>
+    <div class="star" style="top: 5%; left: 35%; animation-delay: 0.5s;"></div>
+    <div class="star" style="top: 25%; left: 45%; animation-delay: 1.5s;"></div>
+    <div class="star" style="top: 30%; left: 55%; animation-delay: 2.5s;"></div>
+    <div class="star" style="top: 10%; left: 65%; animation-delay: 0.7s;"></div>
+    <div class="star" style="top: 20%; left: 75%; animation-delay: 1.7s;"></div>
+    <div class="star" style="top: 5%; left: 85%; animation-delay: 2.7s;"></div>
+    <div class="star" style="top: 15%; left: 95%; animation-delay: 0.3s;"></div>
+    <div class="star" style="top: 40%; left: 5%; animation-delay: 1.3s;"></div>
+    <div class="star" style="top: 50%; left: 15%; animation-delay: 2.3s;"></div>
+    <div class="star" style="top: 60%; left: 25%; animation-delay: 0.2s;"></div>
+    <div class="star" style="top: 70%; left: 35%; animation-delay: 1.2s;"></div>
+    <div class="star" style="top: 80%; left: 45%; animation-delay: 2.2s;"></div>
+    <div class="star" style="top: 90%; left: 55%; animation-delay: 0.8s;"></div>
+    <div class="star" style="top: 85%; left: 65%; animation-delay: 1.8s;"></div>
+    <div class="star" style="top: 75%; left: 75%; animation-delay: 2.8s;"></div>
+    <div class="star" style="top: 65%; left: 85%; animation-delay: 0.4s;"></div>
+    <div class="star" style="top: 55%; left: 95%; animation-delay: 1.4s;"></div>
+  </div>
+
   <div class="container">
     <div class="header">
-      <h1 id="birthday-heading">Happy Birthday Basundi!</h1>
-      <p class="subtitle">Today is your special day!</p>
+      <h1>Happy Birthday Mahek!</h1>
+      <p class="from-text">With love from Manjan</p>
     </div>
     
     <div class="cake-container">
@@ -280,92 +380,13 @@
     </div>
     
     <!-- Create some decorative balloons -->
-    <div class="balloon" style="top: 10%; left: 10%; background: #ff5252; animation-delay: 0s;"></div>
-    <div class="balloon" style="top: 20%; left: 20%; background: #ffeb3b; animation-delay: 1s;"></div>
-    <div class="balloon" style="top: 15%; right: 15%; background: #4fc3f7; animation-delay: 2s;"></div>
-    <div class="balloon" style="top: 25%; right: 25%; background: #a47cff; animation-delay: 3s;"></div>
+    <div class="balloon" style="top: 10%; left: 10%; background: #ff47a3; animation-delay: 0s;"></div>
+    <div class="balloon" style="top: 20%; left: 20%; background: #fffd77; animation-delay: 1s;"></div>
+    <div class="balloon" style="top: 15%; right: 15%; background: #00e0ff; animation-delay: 2s;"></div>
+    <div class="balloon" style="top: 25%; right: 25%; background: #7b4dff; animation-delay: 3s;"></div>
     
-    <button class="gift-button" id="open-gift">Open Your Gift!</button>
-  </div>
-  
-  <div class="modal" id="gift-modal">
-    <div class="modal-content">
-      <span class="close-modal" id="close-modal">&times;</span>
-      <h2>Your Special Birthday Gift!</h2>
-      <img src="bbb.jpg" alt="placeholder" class="gift-image">
-      <p class="gift-message">wishing you the happiest birthday
-        <br> from Manjan</p>
-    </div>
-  </div>
-
-  <script>
-    // Function to update birthday person's name
-    function updateName() {
-      const name = prompt("Enter the birthday person's name:");
-      if (name && name.trim() !== "") {
-        document.getElementById("birthday-heading").innerText = `Happy Birthday, ${name}!`;
-      }
-    }
-    
-    // Run once when page loads
-    updateName();
-    
-    // Gift modal functionality
-    const modal = document.getElementById("gift-modal");
-    
-    document.getElementById("open-gift").addEventListener("click", function() {
-      modal.style.display = "flex";
-      createConfetti(100);
-    });
-    
-    document.getElementById("close-modal").addEventListener("click", function() {
-      modal.style.display = "none";
-    });
-    
-    // Close modal when clicking outside the content
-    window.addEventListener("click", function(event) {
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    });
-    
-    // Create confetti elements
-    function createConfetti(count) {
-      const colors = ["#ff5252", "#a47cff", "#4fc3f7", "#ffeb3b", "#81c784", "#ff85a2", "#ffa07a"];
-      
-      for (let i = 0; i < count; i++) {
-        const confetti = document.createElement("div");
-        confetti.className = "confetti";
-        
-        // Random position, color and size
-        confetti.style.left = Math.random() * 100 + "vw";
-        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        confetti.style.width = Math.random() * 15 + 5 + "px";
-        confetti.style.height = Math.random() * 15 + 5 + "px";
-        
-        // Random animation duration
-        confetti.style.animationDuration = Math.random() * 3 + 3 + "s";
-        
-        document.body.appendChild(confetti);
-        
-        // Remove confetti after animation ends
-        setTimeout(() => {
-          document.body.removeChild(confetti);
-        }, 6000);
-      }
-    }
-    
-    // Blow out candle on click
-    document.getElementById("flame").addEventListener("click", function() {
-      this.style.display = "none";
-      createConfetti(50);
-      alert("You blew out the candle! Make a wish!");
-    });
-    
-    // Initial confetti
-    window.addEventListener("load", function() {
-      createConfetti(40);
-    });
-  </script>
-</body>
-</html>
+    <!-- Create some hearts -->
+    <div class="heart" style="top: 5%; left: 5%; animation-delay: 0s;"></div>
+    <div class="heart" style="top: 15%; right: 5%; animation-delay: 1.5s;"></div>
+    <div class="heart" style="top: 25%; left: 25%; animation-delay: 2.5s;"></div>
+    <div class="heart" style="top: 35%; right: 15%; animation-delay: 3.5s;">
